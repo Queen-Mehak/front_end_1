@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CodeVerse Login</title>
+
+<!-- Font Awesome -->
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}
+
+body{
+    background:linear-gradient(135deg,#5A189A,#6A11CB,#4C1D95);
+    min-height:100vh;
+    overflow:hidden;
+    position:relative;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+nav{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:rgba(255,255,255,.10);
+    backdrop-filter:blur(6px);
+}
+
+.logo{
+    color:white;
+    font-size:32px;
+    font-weight:bold;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+}
+
+nav ul li{
+    margin:0 20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-size:18px;
+    transition:.3s;
+}
+
+nav ul li a:hover{
+    color:orange;
+}
+
+.icons i{
+    color:white;
+    font-size:24px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.icons i:hover{
+    color:orange;
+}
+
+/* ---------------- GLOWING CIRCLES ---------------- */
+
+.circle{
+    position:absolute;
+    width:250px;
+    height:250px;
+    border-radius:50%;
+    z-index:0;
+}
+
+.left{
+    left:120px;
+    top:50%;
+    transform:translateY(-50%);
+    background:#ffb347;
+    box-shadow:
+    0 0 40px #ffb347,
+    0 0 80px #ffb347,
+    0 0 120px rgba(255,179,71,.8);
+}
+
+.right{
+    right:120px;
+    top:50%;
+    transform:translateY(-50%);
+    background:#50F0E6;
+    box-shadow:
+    0 0 40px #50F0E6,
+    0 0 80px #50F0E6,
+    0 0 120px rgba(80,240,230,.8);
+}
+
+/* Soft Blur Around Circles */
+
+.circle::after{
+    content:"";
+    position:absolute;
+    inset:-40px;
+    border-radius:50%;
+    background:inherit;
+    filter:blur(40px);
+    opacity:.6;
+    z-index:-1;
+}
+
+/* ---------------- LOGIN ---------------- */
+
+.container{
+    height:calc(100vh - 80px);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    position:relative;
+    z-index:2;
+}
+
+.login-box{
+    width:380px;
+    background:rgba(255,255,255,.96);
+    padding:35px;
+    border-radius:18px;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+}
+
+.login-box h1{
+    text-align:center;
+    color:#5A189A;
+    margin-bottom:8px;
+    font-size:34px;
+}
+
+.login-box h2{
+    text-align:center;
+    color:#555;
+    margin-bottom:25px;
+    font-size:22px;
+    font-weight:normal;
+}
+
+label{
+    display:block;
+    margin-top:15px;
+    margin-bottom:6px;
+    font-weight:bold;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    outline:none;
+    font-size:15px;
+}
+
+input:focus{
+    border-color:#6A11CB;
+}
+
+.forgot{
+    text-align:right;
+    margin-top:12px;
+}
+
+.forgot a{
+    text-decoration:none;
+    color:#5A189A;
+    font-weight:bold;
+}
+
+button{
+    width:100%;
+    margin-top:20px;
+    padding:13px;
+    border:none;
+    border-radius:8px;
+    background:#5A189A;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+button:hover{
+    background:#3C096C;
+}
+
+.divider{
+    display:flex;
+    align-items:center;
+    margin:25px 0;
+    color:#777;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    flex:1;
+    height:1px;
+    background:#ccc;
+}
+
+.divider span{
+    margin:0 12px;
+}
+
+.signup{
+    text-align:center;
+}
+
+.signup a{
+    text-decoration:none;
+    color:#5A189A;
+    font-weight:bold;
+}
+
+.signup a:hover{
+    text-decoration:underline;
+}
+.icons{
+    position:relative;
+}
+
+.badge{
+    position:absolute;
+    top:-8px;
+    right:-10px;
+    width:18px;
+    height:18px;
+    background:red;
+    color:white;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:11px;
+    font-weight:bold;
+    border:2px solid white;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- Navbar -->
+
+<nav>
+
+    <div class="logo">CodeVerse</div>
+
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Courses</a></li>
+        <li><a href="#">About</a></li>
+    </ul>
+
+    <div class="icons">
+        <i class="fa-regular fa-bell"></i>
+        <span class="badge">3</span>
+    </div>
+
+</nav>
+
+<!-- Glowing Circles -->
+
+<div class="circle left"></div>
+
+<div class="circle right"></div>
+
+<!-- Login -->
+
+<div class="container">
+
+    <div class="login-box">
+
+        <h1>WELCOME BACK</h1>
+        <h2>Login to Continue</h2>
+
+        <form>
+
+            <label>Email</label>
+            <input type="email" placeholder="Enter your Email">
+
+            <label>Password</label>
+            <input type="password" placeholder="Enter your Password">
+
+            <div class="forgot">
+                <a href="#">Forgot Password?</a>
+            </div>
+
+            <button type="submit">Login</button>
+
+            <div class="divider">
+                <span>OR</span>
+            </div>
+
+            <div class="signup">
+                Don't have an account?
+                <a href="#">Sign Up</a>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>

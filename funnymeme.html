@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Survival Hack Meme</title>
+   
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #f0f2f5;
+            font-family: 'Anton', sans-serif;
+            padding: 15px;
+        }
+
+        .meme-card {
+            background-color: #ffffff;
+            border: 4px solid #000000;
+            width: 100%;
+            max-width: 520px;
+            padding: 18px;
+            box-shadow: 8px 8px 0px #000000;
+            text-align: center;
+        }
+
+        .meme-header {
+            font-size: 24px;
+            text-transform: uppercase;
+            color: #000000;
+            margin-bottom: 15px;
+            line-height: 1.2;
+            letter-spacing: 0.5px;
+        }
+
+        .meme-block {
+            border: 3px solid #000000;
+            margin-bottom: 15px;
+            background-color: #ffffff;
+            overflow: hidden;
+            border-radius: 6px;
+        }
+
+        .meme-img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+            border-bottom: 3px solid #000000;
+        }
+
+        .caption {
+            padding: 12px 10px;
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-transform: uppercase;
+        }
+
+        .wrong-choice {
+            background-color: #ffcdd2;
+            color: #c62828;
+        }
+
+        .right-choice {
+            background-color: #c8e6c9;
+            color: #2e7d32;
+        }
+
+        .emoji {
+            font-size: 1.4rem;
+        }
+
+        .meme-footer {
+            font-size: 1.05rem;
+            color: #444444;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 480px) {
+            .meme-header {
+                font-size: 19px;
+            }
+            .meme-img {
+                height: 170px;
+            }
+            .caption {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="meme-card">
+        <h1 class="meme-header">POLICE ARRIVES AT THE PROTEST SITE:</h1>
+
+        <div class="meme-block">
+            <img class="meme-img" src="https://akm-img-a-in.tosshub.com/indiatoday/images/story/202607/cjp-protests-205611835-16x9_1.jpg?VersionId=VTmtQv.B02pHqYrmRXL8Pg8E54x9pcck" alt="Police charge at protest">
+            <div class="caption wrong-choice">
+                <span>Mt maaro sir</span>
+                <span class="emoji">❌</span>
+            </div>
+        </div>
+
+        <div class="meme-block">
+            <img class="meme-img" src="image/jana gana mana.png" alt="Students standing respectfully">
+            <div class="caption right-choice">
+                <span>Jana gana mana...</span>
+                <span class="emoji">✔️</span>
+            </div>
+        </div>
+
+        <p class="meme-footer">⚡ Instant Lathi-Charge Shield Unlocked ⚡</p>
+    </div>
+
+</body>
+</html>
